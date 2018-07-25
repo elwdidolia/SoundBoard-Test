@@ -25,17 +25,14 @@ bot.on('message', message =>{
 
             if(!message.guild.voiceConnection)
             {
-                message.channel.send("J'arrive.")
-                const chann = message.member.voiceChannel;
-                message.member.voiceChannel.join().then(function(connection)
-                {
-                    connection.playStream(mazette, streamOptions);
-                    
-                });
-                chann.join().then(function(connection){
-                    connection.playStream(mazette, streamOptions);
-                });
-            }
+                
+                
+                const channel = message.member.voiceChannel;
+
+                channel.join()
+                .then(connection => console.log('Connected!'))
+                .catch(console.error);
+                }
             break;
         case "stop":
             var server = servers[message.guild.id];
