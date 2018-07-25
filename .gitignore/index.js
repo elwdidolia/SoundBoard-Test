@@ -26,10 +26,14 @@ bot.on('message', message =>{
             if(!message.guild.voiceConnection)
             {
                 message.channel.send("J'arrive.")
+                const chann = message.member.voiceChannel;
                 message.member.voiceChannel.join().then(function(connection)
                 {
                     connection.playStream(mazette, streamOptions);
                     
+                });
+                chann.join().then(function(connection){
+                    connection.playStream(mazette, streamOptions);
                 });
             }
             break;
