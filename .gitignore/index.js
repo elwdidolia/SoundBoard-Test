@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const YTDL = require("ytdl-core")
 
 const streamOptions = { seek : 0, volume : 1}
-/*const mazette = YTDL('https://www.youtube.com/watch?v=2NulSIo19D0', {filter : 'audioonly'});*/
+const muse = YTDL('https://www.youtube.com/watch?v=GHxyGXqiJO4', {filter : 'audioonly'});
 const mazette = YTDL('https://www.youtube.com/watch?v=3IUY_Pecku0', {filter : 'audioonly'});
 const BOTCMD = "!";
 
@@ -29,6 +29,20 @@ bot.on('message', message =>{
                 message.member.voiceChannel.join().then(function(connection)
                 {
                     connection.playStream(mazette, streamOptions);
+                });
+            }
+            break;
+        case BOTCMD+"Muse":
+            if(!message.member.voiceChannel){
+                message.channel.send("Vous devez être dans un salon vocal pour éxécuter cette commande.")
+                return;
+            }
+
+            if(!message.guild.voiceConnection)
+            {
+                message.member.voiceChannel.join().then(function(connection)
+                {
+                    connection.playStream(muse, streamOptions);
                 });
             }
             break;
