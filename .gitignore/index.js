@@ -31,9 +31,9 @@ bot.on('message', message =>{
                 });
             }
             break;
-        case "stop":
+        case BOTCMD+"stop":
             var server = servers[message.guild.id];
-            
+            message.channel.send("STOP");
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
         default:
             break;
