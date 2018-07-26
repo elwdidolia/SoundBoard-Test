@@ -23,16 +23,14 @@ bot.on('message', message =>{
                 return;
             }
 
-            if(!message.guild.voiceConnection)
-            {
-                
+           
                 
                 const channel = message.member.voiceChannel;
 
                 channel.join()
                 .then(connection => console.log('Connected!'))
                 .catch(console.error);
-                }
+                
             break;
         case "stop":
             var server = servers[message.guild.id];
