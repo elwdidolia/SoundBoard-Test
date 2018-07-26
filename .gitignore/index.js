@@ -23,14 +23,16 @@ bot.on('message', message =>{
                 return;
             }
 
-           
+           if(message.member.voiceChannel){
+               message.channel.send("condition validée");
                 
                 const channel = message.member.voiceChannel;
 
                 channel.join()
                 .then(connection => console.log('Connected!'))
                 .catch(console.error);
-                
+               return;
+           }
             break;
         case "stop":
             var server = servers[message.guild.id];
