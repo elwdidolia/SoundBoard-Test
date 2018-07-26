@@ -1,9 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const YTDL = require("ytdl-core")
-ytdl(url, {
-  highWaterMark: 1024 * 1024 * 10 // 10 megabytes
-})
 
 const streamOptions = { seek : 0, volume : 1}
 const muse = YTDL('https://www.youtube.com/watch?v=GHxyGXqiJO4',{highWaterMark: 1024 * 1024 * 10});
