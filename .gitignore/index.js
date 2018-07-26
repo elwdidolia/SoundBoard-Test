@@ -11,10 +11,10 @@ const mazette = YTDL('https://www.youtube.com/watch?v=3IUY_Pecku0',{
   highWaterMark: 1024 * 1024 * 10 // 10 megabytes
 });
 const BOTCMD = "!";
-²
+
 bot.on('ready', function()
 {
-    console.log("Ca marche!");²
+    console.log("Ca marche!");
 });
 bot.on('message', message =>{
     switch(message.content)
