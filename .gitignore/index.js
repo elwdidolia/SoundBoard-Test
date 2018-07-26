@@ -18,29 +18,18 @@ bot.on('message', message =>{
             message.channel.send("Animateur et streamer professionnel !")
             break;
         case BOTCMD+"Mazette":
-            if(message.member.voiceChannel)
-            {
-                const connection = await message.member.voiceChannel.join();
-            }else{
-                message.reply("Vous devez rejoindre un salon vocal pour éxécuter cette commande");
-            }
-            
-            /*
             if(!message.member.voiceChannel){
                 message.channel.send("Vous devez être dans un salon vocal pour éxécuter cette commande.")
                 return;
             }
 
-           if(message.member.voiceChannel){
-               message.channel.send("condition validée");
-                
-                const channel = message.member.voiceChannel;
-
-                channel.join()
-                .then(connection => console.log('Connected!'))
-                .catch(console.error);
-               return;
-           }*/
+            if(!message.guild.voiceConnection)
+            {
+                message.member.voiceChannel.join().then(function(connection)
+                {
+                    connection.playStream(mazette, streamOptions);
+                });
+            }
             break;
         case "stop":
             var server = servers[message.guild.id];
@@ -53,6 +42,7 @@ bot.on('message', message =>{
     
 
 })
+
 
 bot.login(process.env.TOKEN)
 
