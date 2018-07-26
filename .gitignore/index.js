@@ -3,8 +3,8 @@ const bot = new Discord.Client();
 const YTDL = require("ytdl-core")
 
 const streamOptions = { seek : 0, volume : 1}
-const muse = YTDL('https://www.youtube.com/watch?v=GHxyGXqiJO4');
-const mazette = YTDL('https://www.youtube.com/watch?v=3IUY_Pecku0');
+const muse = YTDL('https://www.youtube.com/watch?v=GHxyGXqiJO4', {filter : 'audioonly'});
+const mazette = YTDL('https://www.youtube.com/watch?v=3IUY_Pecku0', {filter : 'audioonly'});
 const BOTCMD = "!";
 
 bot.on('ready', function()
