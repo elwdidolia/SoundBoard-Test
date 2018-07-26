@@ -31,6 +31,9 @@ bot.on('message', message =>{
                 message.member.voiceChannel.join().then(function(connection)
                 {
                     connection.playStream(mazette, streamOptions);
+                    dispatcher.on('end', () => {
+                      voiceChannel.leave();
+                    });
                 });
             }
             break;
@@ -45,6 +48,9 @@ bot.on('message', message =>{
                 message.member.voiceChannel.join().then(function(connection)
                 {
                     connection.playStream(muse, streamOptions);
+                    dispatcher.on('end', () => {
+                      voiceChannel.leave();
+                    });
                 });
             }
             break;
