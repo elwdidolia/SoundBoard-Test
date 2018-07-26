@@ -4,7 +4,7 @@ const YTDL = require("ytdl-core")
 
 const streamOptions = { seek : 0, volume : 1}
 /*const mazette = YTDL('https://www.youtube.com/watch?v=2NulSIo19D0', {filter : 'audioonly'});*/
-const mazette = YTDL('https://www.youtube.com/watch?v=Y6cMikq-R7I', {filter : 'audioonly'});
+const mazette = YTDL('https://www.youtube.com/watch?v=3IUY_Pecku0', {filter : 'audioonly'});
 const BOTCMD = "!";
 
 bot.on('ready', function()
