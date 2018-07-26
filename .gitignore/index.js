@@ -31,10 +31,10 @@ bot.on('message', message =>{
                 });
             }
             break;
-        case BOTCMD+"stop":
-            var server = servers[message.guild.id];
+        case BOTCMD+"stop":        
             message.channel.send("STOP");
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+            break;
         default:
             break;
     }
