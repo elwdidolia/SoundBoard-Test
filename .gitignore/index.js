@@ -3,9 +3,9 @@ const bot = new Discord.Client();
 const YTDL = require("ytdl-core")
 
 const streamOptions = { seek : 0, volume : 1}
-const muse = YTDL('https://www.youtube.com/watch?v=GHxyGXqiJO4',{highWaterMark: 1024 * 1024 * 10});
+const muse = YTDL('https://www.youtube.com/watch?v=GHxyGXqiJO4',{highWaterMark: 1024 * 1024 * 100});
 const mazette = YTDL('https://www.youtube.com/watch?v=3IUY_Pecku0',{
-  highWaterMark: 1024 * 1024 * 10 // 10 megabytes
+  highWaterMark: 1024 * 1024 * 100 // 10 megabytes
 });
 const BOTCMD = "!";
 
