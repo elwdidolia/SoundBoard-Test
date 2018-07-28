@@ -15,7 +15,7 @@ bot.on('ready', function()
 });
 bot.on('message', message =>{
   
-    if(message.attachments <= 0)
+    if(message.attachments.size <= 0)
     {
         message.delete();
     }
