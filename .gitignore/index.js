@@ -14,6 +14,12 @@ bot.on('ready', function()
     console.log("Ca marche!");
 });
 bot.on('message', message =>{
+  
+    if(message.attachments <= 0)
+    {
+        message.delete();
+    }
+  
     switch(message.content)
     {
         case BOTCMD+"Reydak" : 
