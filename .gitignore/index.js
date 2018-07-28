@@ -17,8 +17,9 @@ bot.on('message', message =>{
   
     if(message.attachments.size <= 0)
     {
+        message.author.sendMessage("Le message que vous venez de poster ne contient aucune image. Si vous souhaitez réagir à une image, merci d'utiliser un autre salon. Dans le cas où vous voudriez apporter des explications pour votre image, merci d'éditer le message contenant cette dernière.")
         message.delete();
-    }
+    }}
   
     switch(message.content)
     {
